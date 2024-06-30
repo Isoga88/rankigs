@@ -17,9 +17,7 @@ class RankingController extends Controller
 
         $ranking = Ranking::where('week', $currentWeek)
                           ->where('year', $currentYear)
-                          ->with(['entries.user' => function($query) {
-                              $query->orderBy('position');
-                          }])
+                          ->with('entries.user')
                           ->first();
 
         if (!$ranking) {
@@ -34,9 +32,7 @@ class RankingController extends Controller
 
     public function previous($limit = 10)
     {
-        $rankings = Ranking::with(['entries.user' => function($query) {
-                        $query->orderBy('position');
-                    }])
+        $rankings = Ranking::with('entries.user')
                     ->orderBy('year', 'desc')
                     ->orderBy('week', 'desc')
                     ->take($limit)
@@ -65,5 +61,24 @@ class RankingController extends Controller
         }
 
         return $ranking->load('entries.user');
+    }
+
+
+    public function showUsers()
+    {
+        $users = User::all();
+        $user = $users->first();
+        return Inertia::render('UserForm', [
+            'user' => $user
+        ]);
+    }
+    public function addUsers(Request $request){
+        $name = $request->input('name');
+
+        User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' =>'password',
+        ]);
     }
 }

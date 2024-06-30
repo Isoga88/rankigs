@@ -12,6 +12,7 @@
             </tr>
           </thead>
           <tbody>
+            {{ rankings }}
             <tr v-for="entry in ranking.entries" :key="entry.id">
               <td>{{ entry.position }}</td>
               <td>{{ entry.user.name }}</td>
