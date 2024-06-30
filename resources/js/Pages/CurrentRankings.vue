@@ -1,6 +1,6 @@
 <template>
-    <div>
-      <h1>Classifica Corrente</h1>
+    <div class="h-screen flex flex-col items-center justify-center w-full bg-amber-400">
+      <h1 class=" text-6xl font-medium ">Classifica Corrente</h1>
       <table>
         <thead>
           <tr>
