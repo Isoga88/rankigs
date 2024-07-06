@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        fontbase: ['Playwrite US Modern']
+        fontbase: ['Anton SC'],
+        secondary: ['Arsenal SC'],
       }
     },
   },

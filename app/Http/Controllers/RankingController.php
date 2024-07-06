@@ -24,7 +24,6 @@ class RankingController extends Controller
         }])
         ->first();
 
-
         return Inertia::render('CurrentRankings', [
             'ranking' => $ranking
         ]);

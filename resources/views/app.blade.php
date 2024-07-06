@@ -8,15 +8,15 @@
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" nonce="{{Illuminate\Support\Facades\Vite::cspNonce()}}">
-
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" nonce="{{Illuminate\Support\Facades\Vite::cspNonce()}}">
+        <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" nonce="{{Illuminate\Support\Facades\Vite::cspNonce()}}">
         <!-- Styles -->
 
 
         <!-- Scripts -->
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-fontbase antialiased">
         @inertia
 
         @env ('local')
